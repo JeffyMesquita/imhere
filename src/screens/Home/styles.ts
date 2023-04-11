@@ -18,12 +18,20 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   input: {
+    flex: 1,
     height: 56,
     backgroundColor: '#1F1E25',
     borderRadius: 4,
     color: '#FFF',
     paddingHorizontal: 16,
     fontSize: 16,
+  },
+  form: {
+    marginTop: 36,
+    marginBottom: 42,
+    flexDirection: 'row',
+    width: '100%',
+    gap: 12,
   },
   buttonText: {
     color: '#FFF',
