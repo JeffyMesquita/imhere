@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Text,
   View,
@@ -11,30 +12,17 @@ import { styles } from './styles';
 import { Participant } from '../../components/Participant';
 
 export function Home() {
-  const participants = [
-    'Jeffy',
-    'Jeferson',
-    'Jé',
-    'Jefinho',
-    'Jefão',
-    'Jef',
-    'Jofrey',
-    'Anakin',
-    'Darth Vader',
-    'Luke Skywalker',
-    'Leia Organa',
-    'Han Solo',
-    'Chewbacca',
-    'Obi-Wan Kenobi',
-  ];
+  const [participants, setParticipants] = useState(['Jeffy']);
 
   function handleParticipantAdd() {
-    if (participants.includes('Jeffy')) {
+    if (participants.includes('Dave')) {
       return Alert.alert(
         'Participante já adicionado',
         'Você já adicionou esse participante'
       );
     }
+
+    setParticipants((prevState) => [...prevState, 'Luke Skywalker']);
   }
 
   function handleParticipantRemove(name: string) {
