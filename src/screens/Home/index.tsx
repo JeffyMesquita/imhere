@@ -4,6 +4,7 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
+  Alert,
 } from 'react-native';
 import { styles } from './styles';
 
@@ -28,11 +29,26 @@ export function Home() {
   ];
 
   function handleParticipantAdd() {
-    console.log('Adicionar participante');
+    if (participants.includes('Jeffy')) {
+      return Alert.alert(
+        'Participante já adicionado',
+        'Você já adicionou esse participante'
+      );
+    }
   }
 
   function handleParticipantRemove(name: string) {
-    console.log(`Remover participante ${name}`);
+    Alert.alert('Remover participante', `Deseja remover ${name} da lista?`, [
+      {
+        text: 'Sim',
+        onPress: () =>
+          Alert.alert('Participante removido', `${name} foi removido da lista`),
+      },
+      {
+        text: 'Não',
+        style: 'cancel',
+      },
+    ]);
   }
 
   return (
