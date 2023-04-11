@@ -16,6 +16,13 @@ export function Home() {
   const [participantName, setParticipantName] = useState('');
 
   function handleParticipantAdd() {
+    if (participantName.trim() === '') {
+      return Alert.alert(
+        'Nome do participante vazio',
+        'Digite o nome do participante'
+      );
+    }
+    
     if (participants.includes(participantName)) {
       return Alert.alert(
         'Participante já adicionado',
@@ -31,8 +38,12 @@ export function Home() {
     Alert.alert('Remover participante', `Deseja remover ${name} da lista?`, [
       {
         text: 'Sim',
-        onPress: () =>
-          Alert.alert('Participante removido', `${name} foi removido da lista`),
+        onPress: () => {
+          setParticipants((prevState) =>
+            prevState.filter((item) => item !== name)
+          );
+          Alert.alert('Participante removido', `${name} foi removido da lista`);
+        },
       },
       {
         text: 'Não',
