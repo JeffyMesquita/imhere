@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#131016',
+    paddingHorizontal: 24,
   },
   title: {
     color: '#FDFCFE',
@@ -16,4 +17,12 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  input: {
+    height: 56,
+    backgroundColor: '#1F1E25',
+    borderRadius: 4,
+    color: '#FFF',
+    paddingHorizontal: 16,
+    fontSize: 16,
+  }
 });
