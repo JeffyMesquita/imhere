@@ -24,5 +24,17 @@ export const styles = StyleSheet.create({
     color: '#FFF',
     paddingHorizontal: 16,
     fontSize: 16,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 40,
+  },
+  button: {
+    width: 56,
+    height: 56,
+    borderRadius: 4,
+    backgroundColor: '#31CF67',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
