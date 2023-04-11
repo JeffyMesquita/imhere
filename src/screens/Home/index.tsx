@@ -12,17 +12,19 @@ import { styles } from './styles';
 import { Participant } from '../../components/Participant';
 
 export function Home() {
-  const [participants, setParticipants] = useState(['Jeffy']);
+  const [participants, setParticipants] = useState<string[]>([]);
+  const [participantName, setParticipantName] = useState('');
 
   function handleParticipantAdd() {
-    if (participants.includes('Dave')) {
+    if (participants.includes(participantName)) {
       return Alert.alert(
         'Participante já adicionado',
         'Você já adicionou esse participante'
       );
     }
 
-    setParticipants((prevState) => [...prevState, 'Luke Skywalker']);
+    setParticipants((prevState) => [...prevState, participantName]);
+    setParticipantName('');
   }
 
   function handleParticipantRemove(name: string) {
@@ -49,6 +51,8 @@ export function Home() {
           style={styles.input}
           placeholder="Nome do participante"
           placeholderTextColor="#6B6B6B"
+          onChangeText={setParticipantName}
+          value={participantName}
         />
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText} onPress={handleParticipantAdd}>
