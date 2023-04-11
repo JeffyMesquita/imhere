@@ -64,17 +64,11 @@ export function Home() {
           />
         )}
         ListEmptyComponent={() => (
-          <Text style={styles.emptyList}>Ninguém chegou no evento ainda? Adicione a sua lista de presença.</Text>
+          <Text style={styles.emptyList}>
+            Ninguém chegou no evento ainda? Adicione a sua lista de presença.
+          </Text>
         )}
       />
-
-      {/* {participants.map((participant) => (
-        <Participant
-          key={participant}
-          name={participant}
-          onRemove={() => handleParticipantRemove(participant)}
-        />
-      ))} */}
     </View>
   );
 }
